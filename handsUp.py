@@ -41,7 +41,7 @@ async def on_message(message):
         #await message.channel.send("Command noticed")
 
     if message.content.lower() in ["!handcheck", "!handscheck", "!handsup", "!handup"]:
-        if "prof" not in message.author.nick.lower():
+        if "prof" not in message.author.display_name.lower():
             print("not prof")
             return
         #await message.channel.send("Command noticed")
