@@ -32,7 +32,7 @@ async def on_message(message):
     # print("a" + message.content + "a")
     if type(message.content) != type(""):
         return
-    
+
     if message.content == '':
         return
 
