@@ -17,12 +17,8 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    #guild = discord.utils.get(client.guilds, name=GUILD)
-
-    print(
-        f'{client.user} is activated'
-       # f'{guild.name}(id: {guild.id})'
-    )
+    for guild in client.guilds:
+        print(guild.name, guild.id)
 
 @client.event
 async def on_message(message):
@@ -44,10 +40,13 @@ async def on_message(message):
         print("command noticed")
         #await message.channel.send("Command noticed")
 
-    if command.lower() in ["!handcheck", "!handscheck", "!handsup", "!handup"]:
+    if message.guild.id == 688793917772136520:
         if "prof" not in message.author.display_name.lower():
             print("not prof")
             return
+
+    if command.lower() in ["!handcheck", "!handscheck", "!handsup", "!handup"]:
+
         #await message.channel.send("Command noticed")
 
             #emoji = discord.utils.get(client.get_all_emojis(), name='EmojiName')
